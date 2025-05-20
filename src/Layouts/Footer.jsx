@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        <div className='bg-gray-900 text-white py-20 px-15 '>
+        <div className='bg-gray-900 text-white py-10 md:py-20 md:px-15 px-8'>
             <div className='lg:flex justify-between'>
                 <div>
                     {/* logo and title */}
@@ -25,7 +25,7 @@ const Footer = () => {
 
                     </div>
                 </div>
-                <div>
+                <div className='mt-3 md:mt-0'>
                     <h1 className='font-bold text-2xl mb-5'>Quick Links</h1>
                     <div className='grid mt-2 space-x-3'>
                         <NavLink to={'/'}>Home</NavLink>
@@ -34,7 +34,7 @@ const Footer = () => {
                         <NavLink to={'/mytask'}>My Posted Tasks</NavLink>
                     </div>
                 </div>
-                <div>
+                <div className='mt-3 md:mt-0'>
                     <h1 className='font-bold text-2xl mb-5'>Contact Us</h1>
                     <div className='mt-2'>
                         <p>123 Market Street, Suite 100</p>
