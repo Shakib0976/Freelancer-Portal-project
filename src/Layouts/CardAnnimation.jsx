@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const CardAnnimation = () => {
     return (
-        <div className='bg-[#f5f7fa] py-12'>
+        <div className='shadow-sm'>
             <div className='w-11/12 mx-auto my-7 '>
                 <h1 className='md:text-5xl text-3xl  mt-20 mb-8 font-semibold'>Popular services</h1>
 
