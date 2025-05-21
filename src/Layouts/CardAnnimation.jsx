@@ -13,7 +13,7 @@ const CardAnnimation = () => {
                         whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ type: "spring", bounce: 0.6, duration: 0.6 }}
                     >
-                        <div className='bg-[#0D4715] p-3 rounded-2xl h-65'>
+                        <div className='bg-[#0D4715] p-3 rounded-2xl '>
                             <h1 className=' text-white mt-2 mb-12 font-semibold text-xl '>Architecture & Interior Design</h1>
                             <img className='rounded-2xl md:h-30 w-full' src="/c7.jpg" alt="" />
 
@@ -29,7 +29,7 @@ const CardAnnimation = () => {
                         whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ type: "spring", bounce: 0.6, duration: 0.6 }}
                     >
-                        <div className='bg-[#0D4715] p-3 rounded-2xl h-65'>
+                        <div className='bg-[#0D4715] p-3 rounded-2xl'>
                             <h1 className='  text-white mt-2 mb-12 font-semibold text-xl '>Software Development</h1>
                             <img className='rounded-2xl md:h-30 w-full' src="/c2.jpg" alt="" />
 
@@ -46,8 +46,8 @@ const CardAnnimation = () => {
                         whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ type: "spring", bounce: 0.6, duration: 0.6 }}
                     >
-                        <div className='bg-[#0D4715]  p-3 rounded-2xl h-65'>
-                            <h1 className=' text-white mt-2 mb-19 font-semibold text-xl '>Video Editing</h1>
+                        <div className='bg-[#0D4715]  p-3 rounded-2xl '>
+                            <h1 className=' text-white mt-2 mb-12 lg:mb-19 font-semibold text-xl '>Video Editing</h1>
                             <img className='rounded-2xl md:h-30 w-full' src="/c3.jpg" alt="" />
 
                         </div>
@@ -63,7 +63,7 @@ const CardAnnimation = () => {
                         whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ type: "spring", bounce: 0.6, duration: 0.6 }}
                     >
-                        <div className='bg-[#0D4715] p-3 rounded-2xl h-65'>
+                        <div className='bg-[#0D4715] p-3 rounded-2xl'>
                             <h1 className=' text-white mt-2 mb-12 font-semibold text-xl '>Website Development</h1>
                             <img className='rounded-2xl md:h-30 w-full' src="/c4.jpg" alt="" />
 
@@ -80,9 +80,9 @@ const CardAnnimation = () => {
                         whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ type: "spring", bounce: 0.6, duration: 0.6 }}
                     >
-                        <div className='bg-[#0D4715] p-3 rounded-2xl h-65'>
+                        <div className='bg-[#0D4715] p-3 rounded-2xl'>
                             <h1 className=' text-white mt-2 mb-19 font-semibold text-xl '>AI Development</h1>
-                            <img className='rounded-2xl h-30 w-full ' src="/c5.jpg" alt="" />
+                            <img className='rounded-2xl md:h-30 w-full ' src="/c5.jpg" alt="" />
 
                         </div>
 
@@ -97,9 +97,9 @@ const CardAnnimation = () => {
                         whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ type: "spring", bounce: 0.6, duration: 0.6 }}
                     >
-                        <div className='bg-[#0D4715] p-3 rounded-2xl h-65'>
+                        <div className='bg-[#0D4715] p-3 rounded-2xl'>
                             <h1 className=' text-white mt-2 mb-19 font-semibold text-xl  '>SEO</h1>
-                            <img className='rounded-2xl h-30 w-full' src="/c6.jpg" alt="" />
+                            <img className='rounded-2xl md:h-30 w-full' src="/c6.jpg" alt="" />
 
                         </div>
 
