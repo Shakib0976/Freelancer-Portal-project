@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Login = () => {
     return (
-         <div className=' flex  justify-center items-center  h-screen bg-cover' style={{ backgroundImage: "url('/bg.jpg')" }}>
+         <div className=' flex py-15  justify-center items-center   bg-cover' style={{ backgroundImage: "url('/bg.jpg')" }}>
             <div style={{ backgroundImage: "url('/bg2.jpg')" }} className="card bg-base-100 bg-cover text-white  w-full max-w-sm shrink-0 shadow-2xl">
 
 
