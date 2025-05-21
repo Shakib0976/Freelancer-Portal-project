@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const Carusel = () => {
     return (
         <Carousel showThumbs={false} autoPlay infiniteLoop>
-            <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('/i2.jpg')" }} >
+            <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('/i2.jpg')" }}>
                 <h1 className=' text-xl md:text-4xl lg:text-6xl font-bold'><span className='text-green-500'>Find</span> <span className=''>Expert</span> <span><Typewriter
                     words={['Developer', 'Designer', 'Creator', 'programmer']}
                     loop={5}

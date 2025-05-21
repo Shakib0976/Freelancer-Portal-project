@@ -20,9 +20,9 @@ const Card2 = () => {
                 </div>
             </div>
             <div className='md:flex justify-between my-30'>
-                
 
-                <div className='flex-1 bg-gray-900 py-17 px-12 rounded-t-2xl md:rounded-l-2xl'>
+
+                <div className='flex-1 bg-gray-900 py-17 px-12 md:rounded-l-2xl md:rounded-tr-none rounded-t-2xl'>
                     <h1 className='font-bold text-xl text-green-500 mb-4'>Grow your business</h1>
                     <p className='font-bold text-2xl md:text-4xl text-white mb-8'>
                         Trusted globally by over 1 million businesses, small to large
@@ -30,8 +30,8 @@ const Card2 = () => {
                     <button className='bg-green-700 hover:bg-green-400 font-semibold text-white px-3 md:px-5 md:py-3 py-2 rounded'>Start Now For Free</button>
                 </div>
 
-                <div className='flex-1'>
-                    <img className='w-full rounded-b-2xl md:rounded-r-2xl h-full object-cover' src="/bs.jpg" alt="Business support" />
+                <div className='flex-1 md:rounded-r-2xl md:rounded-tl-none rounded-b-2xl'>
+                    <img className='w-full  md:rounded-r-2xl h-full object-cover' src="/bs.jpg" alt="Business support" />
                 </div>
             </div>
         </div>
