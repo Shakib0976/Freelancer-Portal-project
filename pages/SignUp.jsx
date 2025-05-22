@@ -3,7 +3,8 @@ import { Link, Navigate, useNavigate } from 'react-router';
 import { AuthContext } from '../src/Contest/AuthContest';
 
 const SignUp = () => {
-    const { setUser,  createUser , updateUser} =use(AuthContext);
+    const { setUser, createUser , updateUser} =use(AuthContext);
+   
 
     const [error , setError]=useState('')
 

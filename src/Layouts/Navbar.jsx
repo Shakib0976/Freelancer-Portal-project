@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { use, useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
 import { NavLink } from 'react-router';
+import { AuthContext } from '../Contest/AuthContest';
 
 
 const Navbar = () => {
     const { toggleTheme } = useContext(ThemeContext);
+    const {user} =use(AuthContext);
 
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
@@ -72,6 +74,7 @@ const Navbar = () => {
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </label></button>
+                    {user.email}
                 </div>
             </div>
 
