@@ -5,6 +5,8 @@ import { AuthContext } from '../Contest/AuthContest';
 import { RxAvatar } from "react-icons/rx";
 import { signOut } from 'firebase/auth';
 import { auth } from '../Firebase/Firebase.config';
+import { Toaster } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 
 
@@ -13,15 +15,40 @@ const Navbar = () => {
     const { user, setUser } = use(AuthContext);
     console.log(user);
 
+
+
+
+
     const logoutUser = () => {
-        signOut(auth)
-            .then(() => {
-                console.log("User signed out");
-                setUser(null); // Clear user from context
-            })
-            .catch((error) => {
-                console.log("Logout error:", error.message);
-            });
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                signOut(auth)
+                    .then(() => {
+                        console.log("User signed out");
+                        setUser(null); // Clear user from context
+                    })
+                    .catch((error) => {
+                        console.log("Logout error:", error.message);
+                    });
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+
+
+
 
     }
 
@@ -33,6 +60,7 @@ const Navbar = () => {
 
     return (
         <div className=' mx-auto shadow-xl '>
+            <Toaster position="top-right" />
             <div className="navbar bg-base-100 ">
                 <div className="navbar-start">
                     <div className="dropdown">

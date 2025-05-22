@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router';
 import { AuthContext } from '../src/Contest/AuthContest';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const { setUser, createUser, googleSignIn, updateUser } = use(AuthContext);
@@ -20,6 +21,10 @@ const SignUp = () => {
 
         if (password.length < 6) {
             return setError('Password must be at least 6 characters long.');
+        } else if (!/[A-Z]/.test(password)) {
+            return setError('Password must contain at least one uppercase letter.');
+        } else if (!/[a-z]/.test(password)) {
+            return setError('Password must contain at least one lowercase letter.');
         }
         else {
             setError('');
@@ -32,7 +37,7 @@ const SignUp = () => {
                     navigate('/')
                     const user = (result.user);
 
-
+                    toast.success('Successfully Signin')
 
                     updateUser({ displayName: name, photoURL: photo })
                         .then(() => {
@@ -66,7 +71,7 @@ const SignUp = () => {
                 navigate('/');
                 const user = result.user;
                 setUser(user);
-
+              toast.success('Successfully Signin')
 
             }).catch((error) => {
 
