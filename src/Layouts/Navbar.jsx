@@ -13,7 +13,7 @@ const Navbar = () => {
         <NavLink to={'/mytask'}>My Posted Tasks</NavLink></>
 
     return (
-        <div className='max-w-11/12 mx-auto'>
+        <div className=' mx-auto shadow-xl '>
             <div className="navbar bg-base-100 ">
                 <div className="navbar-start">
                     <div className="dropdown">

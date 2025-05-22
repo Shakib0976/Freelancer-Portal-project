@@ -3,10 +3,10 @@ import { Link } from 'react-router';
 
 const SignUp = () => {
     return (
-        <div className=' flex py-15 bg-cover justify-center items-center' style={{ backgroundImage: "url('/bg.jpg')" }}>
-            <div style={{ backgroundImage: "url('/bg2.jpg')" }}  className="card bg-base-100 bg-cover text-white  w-full max-w-sm shrink-0 shadow-2xl">
+        <div className=' flex py-15  justify-center items-center'>
+            <div className="card bg-base-100  border border-gray-300  w-full max-w-sm shrink-0 shadow-2xl">
 
-                <h1 className='text-4xl text-center my-4'>Sign Up Now!</h1>
+                <h1 className='text-3xl font-bold text-center mt-4'>Sign Up Now!</h1>
                 <div className="card-body">
                     <form  className="fieldset">
                         {/* name */}
@@ -14,14 +14,14 @@ const SignUp = () => {
                         <input
                             name='name'
                             type="text"
-                            className="input bg-black"
+                            className="input "
                             placeholder="name" />
                         {/* photo-url */}
                         <label className="label">Photo_url</label>
                         <input
                             name='photo'
                             type="text"
-                            className="input bg-black"
+                            className="input "
                             placeholder="Photo_url" />
                         {/* email */}
                         <label className="label">Email</label>
@@ -29,7 +29,7 @@ const SignUp = () => {
                             required
                             name='email'
                             type="email"
-                            className="input bg-black"
+                            className="input"
                             placeholder="Email" />
                         {/* password */}
                         <label className="label">Password</label>
@@ -37,7 +37,7 @@ const SignUp = () => {
                             required
                             name='password'
                             type="password"
-                            className="input bg-black"
+                            className="input"
                             placeholder="Password" />
                         {/* button */}
                         <div><a className="link link-hover">Forgot password?</a></div>
