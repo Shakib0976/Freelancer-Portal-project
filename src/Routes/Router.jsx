@@ -9,6 +9,7 @@ import MyTask from "../../pages/MyTask";
 import Login from "../../pages/Login";
 import SignUp from "../../pages/SignUp";
 import ErrorPage from "../../pages/Error";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/browsetasks',
-        Component: Bouwsetasks
+        element: <PrivateRoutes><Bouwsetasks></Bouwsetasks></PrivateRoutes>
       },
 
       {

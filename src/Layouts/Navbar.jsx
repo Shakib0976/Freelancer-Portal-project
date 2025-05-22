@@ -2,11 +2,28 @@ import React, { use, useContext } from 'react';
 import { ThemeContext } from './ThemeProvider';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../Contest/AuthContest';
+import { RxAvatar } from "react-icons/rx";
+import { signOut } from 'firebase/auth';
+import { auth } from '../Firebase/Firebase.config';
+
 
 
 const Navbar = () => {
     const { toggleTheme } = useContext(ThemeContext);
-    const {user} =use(AuthContext);
+    const { user, setUser } = use(AuthContext);
+    console.log(user);
+
+    const logoutUser = () => {
+        signOut(auth)
+            .then(() => {
+                console.log("User signed out");
+                setUser(null); // Clear user from context
+            })
+            .catch((error) => {
+                console.log("Logout error:", error.message);
+            });
+
+    }
 
     const links = <>
         <NavLink to={'/'}>Home</NavLink>
@@ -39,13 +56,45 @@ const Navbar = () => {
                     </ul>
                 </div>
 
+
+
+
                 <div className="navbar-end">
-                    <div className='space-x-5 mx-4'>
-                        <NavLink to={'/signUp'}>SignUp</NavLink>
-                        <NavLink to={'/login'}>Login</NavLink>
+                    <div className='mr-4 '>
+                        {user ? (
+                            user.photoURL ? (
+                                <div className="dropdown dropdown-end">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-12 rounded-full">
+                                            <img src={user.photoURL} alt="User Avatar" />
+                                        </div>
+                                    </div>
+                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 border shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60">
+                                        <li>
+                                            <span className="font-bold">Email:</span>
+                                            <span className="text-sm break-all">{user.email}</span>
+                                        </li>
+                                        <li>
+                                            <button onClick={logoutUser} className="btn btn-sm btn-error mt-1">Log Out</button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            ) : (
+                                <RxAvatar size={35} />
+                            )
+                        ) : (
+                            <div className="space-x-5 mx-4 flex">
+                                <NavLink className='hover:text-green-500 font-bold hidden md:block' to="/signup">Sign Up</NavLink>
+                                <NavLink className='hover:text-green-500 font-bold' to="/login">Login</NavLink>
+                            </div>
+                        )}
+
                     </div>
+
+
                     {/* Toogle theme contronl button  button */}
-                    <button onClick={toggleTheme}><label className="flex cursor-pointer gap-2">
+                    <button onClick={toggleTheme}><label className="flex mr-2 cursor-pointer gap-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -74,7 +123,6 @@ const Navbar = () => {
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </label></button>
-                    {user.email}
                 </div>
             </div>
 
