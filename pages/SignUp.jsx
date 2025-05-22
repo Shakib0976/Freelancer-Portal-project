@@ -1,14 +1,69 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use, useState } from 'react';
+import { Link, Navigate, useNavigate } from 'react-router';
+import { AuthContext } from '../src/Contest/AuthContest';
 
 const SignUp = () => {
+    const { setUser,  createUser , updateUser} =use(AuthContext);
+
+    const [error , setError]=useState('')
+
+   const navigate =useNavigate()
+
+
+    const handleCreateUser = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const photo = e.target.photo.value;
+
+        if (password.length < 6) {
+            return setError('Password must be at least 6 characters long.');
+        }
+        else {
+            setError('');
+           
+
+
+
+            createUser(email, password)
+                .then((result) => {
+                    navigate('/')
+                    const user = (result.user);
+                   
+                    
+
+                   updateUser({ displayName: name, photoURL: photo })
+                        .then(() => {
+                            setUser({ ...user, displayName: name, photoURL: photo });
+
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            setUser(user);
+                        })
+
+
+                }
+                )
+
+                .catch((error) => {
+                    console.log(error.message);
+                    setError('Account already created !')
+                })
+
+
+        }
+
+
+    }
     return (
         <div className=' flex py-15  justify-center items-center'>
             <div className="card bg-base-100  border border-gray-300  w-full max-w-sm shrink-0 shadow-2xl">
 
                 <h1 className='text-3xl font-bold text-center mt-4'>Sign Up Now!</h1>
                 <div className="card-body">
-                    <form  className="fieldset">
+                    <form onSubmit={handleCreateUser} className="fieldset">
                         {/* name */}
                         <label className="label">Name</label>
                         <input
@@ -44,6 +99,7 @@ const SignUp = () => {
                         <button type='submit' className="btn btn-neutral mt-4">Sign up</button>
                         {/* <div className='text-center text-red-700 font-semibold'>{error}</div> */}
                     </form>
+                    <h1 className='text-red-500'>{error}</h1>
                     <p className='text-center mb-3'>Already have an account?<span className='text-blue-700 ml-2'><Link to='/login'>Login</Link></span></p>
                     <p className='font-bold text-gray-400 text-center'>Or, login with</p>
 
