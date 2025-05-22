@@ -1,14 +1,28 @@
-import React from 'react';
+import { AuthContext } from '../src/Contest/AuthContest';
 
 const AddTask = () => {
+    
+    
 
     const handleSUbmit = (e) => {
-         e.preventDefault()
+        e.preventDefault()
 
         const form = e.target;
         const formData = new FormData(form);
         const addData = Object.fromEntries(formData.entries());
         console.log(addData);
+
+        fetch('http://localhost:5000/task', {
+            method: 'POST',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(addData)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
 
     }
 
@@ -59,11 +73,11 @@ const AddTask = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label className="block  font-medium mb-1">Your Email</label>
-                        <input  defaultValue='example@email' className="w-full px-4 py-2 border rounded-md " />
+                        <input name="email" defaultValue='example@email' className="w-full px-4 py-2 border rounded-md " />
                     </div>
                     <div>
                         <label className="block font-medium mb-1">Your Name</label>
-                        <input type="text" readOnly value="Google User" className="w-full px-4 py-2 border rounded-md " />
+                        <input name='user' type="text" readOnly value="Google User" className="w-full px-4 py-2 border rounded-md " />
                     </div>
                 </div>
 

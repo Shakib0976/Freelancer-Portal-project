@@ -6,6 +6,7 @@ import {
 } from "react-router";
 import router from './Routes/Router.jsx';
 import ThemeProvider from './Layouts/ThemeProvider.jsx';
+import AuthProvider from './Contest/AuthProvider.jsx';
 
 
 
@@ -14,8 +15,10 @@ import ThemeProvider from './Layouts/ThemeProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </AuthProvider>
   </StrictMode>,
 )
