@@ -1,12 +1,12 @@
 import React, { use, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../src/Contest/AuthContest';
 import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const { setUser, createUser, googleSignIn, updateUser } = use(AuthContext);
 
-
+ const locations =useLocation();
     const [error, setError] = useState('')
 
     const navigate = useNavigate()
@@ -34,7 +34,9 @@ const SignUp = () => {
 
             createUser(email, password)
                 .then((result) => {
-                    navigate('/')
+                     navigate(locations?.state || '/', {
+                    state: { toastMessage: 'Login successful!' }
+                });
                     const user = (result.user);
 
                     toast.success('Successfully Signin')
@@ -54,7 +56,8 @@ const SignUp = () => {
                 )
 
                 .catch((error) => {
-                    console.log(error.message);
+                    
+                    toast.error(error.message);
                     setError('Account already created !')
                 })
 
@@ -68,7 +71,9 @@ const SignUp = () => {
     const handleSigninGoogle = () => {
         googleSignIn()
             .then((result) => {
-                navigate('/');
+                 navigate(locations?.state || '/', {
+                    state: { toastMessage: 'Login successful!' }
+                });
                 const user = result.user;
                 setUser(user);
               toast.success('Successfully Signin')
@@ -77,6 +82,7 @@ const SignUp = () => {
 
                 const errorMessage = error.message;
                 console.log(errorMessage);
+                toast.error(errorMessage)
             });
 
 

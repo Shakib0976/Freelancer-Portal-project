@@ -18,7 +18,9 @@ const Login = () => {
     const handleSigninGoogle = () => {
         googleSignIn()
             .then((result) => {
-                navigate('/');
+                navigate(locations?.state || '/', {
+                    state: { toastMessage: 'Login successful!' }
+                });
                 const user = result.user;
                 setUser(user);
                 toast.success('Successfully login')
@@ -26,7 +28,7 @@ const Login = () => {
             }).catch((error) => {
 
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                toast.error(errorMessage);
             });
 
 
@@ -53,7 +55,7 @@ const Login = () => {
             })
             .catch((error) => {
                 console.log(error.message);
-                // toast.error('Invalid email or password!');
+                toast.error('Invalid email or password!');
             })
 
 
