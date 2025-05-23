@@ -9,8 +9,7 @@ const Bouwsetasks = () => {
         setSelectedCategory(e.target.value);
     };
 
-    const tasksFiler = seleCatergorys === "All" || seleCatergorys === "Select a category"
-      ? tasks
+    const tasksFiler = seleCatergorys === "All" ? tasks
         : tasks.filter(task => task.options === seleCatergorys);
     return (
         <div className='w-11/12 mx-auto my-20'>
