@@ -1,8 +1,15 @@
+import { use } from 'react';
 import { AuthContext } from '../src/Contest/AuthContest';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 
 const AddTask = () => {
-    
-    
+
+    const { user } = use(AuthContext);
+    console.log(user.photoURL);
+    const navigate = useNavigate();
+
+
 
     const handleSUbmit = (e) => {
         e.preventDefault()
@@ -22,6 +29,8 @@ const AddTask = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                toast.success('task added Success')
+                navigate('/mytask')
             })
 
     }
@@ -73,11 +82,11 @@ const AddTask = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label className="block  font-medium mb-1">Your Email</label>
-                        <input name="email" defaultValue='example@email' className="w-full px-4 py-2 border rounded-md " />
+                        <input name="email" readOnly value={user ? user.email : 'User name Not Found'} className="w-full px-4 py-2 border rounded-md " />
                     </div>
                     <div>
                         <label className="block font-medium mb-1">Your Name</label>
-                        <input name='user' type="text" readOnly value="Google User" className="w-full px-4 py-2 border rounded-md " />
+                        <input name='user' type="text" readOnly value={user ? user.displayName : 'user not found'} className="w-full px-4 py-2 border rounded-md " />
                     </div>
                 </div>
 

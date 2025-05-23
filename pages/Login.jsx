@@ -10,12 +10,13 @@ import toast from 'react-hot-toast';
 const Login = () => {
     const locations = useLocation();
 
-    const { setUser, googleSignIn, logInUser } = use(AuthContext);
+    const { setUser, googleSignIn, logInUser ,setLoading } = use(AuthContext);
 
     const navigate = useNavigate();
 
 
     const handleSigninGoogle = () => {
+        setLoading(true);
         googleSignIn()
             .then((result) => {
                 navigate(locations?.state || '/', {
@@ -87,7 +88,7 @@ const Login = () => {
                             placeholder="Password" />
                         <div><button type='button' className="link link-hover">Forgot password?</button></div>
                         {/* button */}
-                        <button type='submit' className="btn btn-neutral mt-4">Login</button>
+                        <button type='submit' className="btn hover:text-green-500 font-bold btn-neutral mt-4">Login</button>
                     </form>
                     <p className='text-center mb-3'>Don't have an account?<span className='text-blue-700'> <Link to='/signUp'>Sign up</Link></span></p>
                     <p className='font-bold text-gray-400 text-center'>Or, login with</p>

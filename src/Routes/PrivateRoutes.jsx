@@ -5,6 +5,8 @@ import { AuthContext } from '../Contest/AuthContest';
 
 const PrivateRoutes  = ({children}) => {
 
+
+
     const locations =useLocation();
    
 

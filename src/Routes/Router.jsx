@@ -14,30 +14,30 @@ import PrivateRoutes from "./PrivateRoutes";
 const router = createBrowserRouter([
   {
     path: "/",
-    errorElement: <ErrorPage></ErrorPage> ,
-    Component: Root ,
-    children:[
+    errorElement: <ErrorPage></ErrorPage>,
+    Component: Root,
+    children: [
       {
-        index:true , Component:Home
+        index: true, Component: Home
       },
 
       {
-        path:'/addtask',
-        Component: AddTask
+        path: '/addtask',
+        element: <PrivateRoutes><AddTask></AddTask></PrivateRoutes>
 
       },
       {
-        path:'/browsetasks',
+        path: '/browsetasks',
         element: <PrivateRoutes><Bouwsetasks></Bouwsetasks></PrivateRoutes>
       },
 
       {
-        path:'/mytask',
-        Component:MyTask
+        path: '/mytask',
+        element: <PrivateRoutes><MyTask></MyTask></PrivateRoutes>
       },
       {
-        path:'/login',
-        Component:Login
+        path: '/login',
+        Component: Login
       },
 
       {

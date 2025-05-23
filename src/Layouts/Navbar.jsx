@@ -17,8 +17,6 @@ const Navbar = () => {
 
 
 
-
-
     const logoutUser = () => {
 
         Swal.fire({
@@ -75,7 +73,7 @@ const Navbar = () => {
                     </div>
                     <div className=' hidden md:block'>
 
-                        <a className="btn btn-ghost text-2xl text-xl"><img className='w-10' src='/logo.png' alt="" />Freelancer Market</a>
+                        <a className="btn btn-ghost text-2xl"><img className='w-10' src='/logo.png' alt="" />Freelancer Market</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -90,33 +88,32 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div className='mr-4 '>
                         {user ? (
-                            user.photoURL ? (
-                                <div className="dropdown dropdown-end">
-                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                        <div className="w-12 rounded-full">
+                            <div className="dropdown dropdown-end">
+                                <div tabIndex={0}  className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-12 rounded-full content-center">
+                                        {user.photoURL ? (
                                             <img src={user.photoURL} alt="User Avatar" />
-                                        </div>
+                                        ) : ( <RxAvatar size={35} />
+                                        )}
                                     </div>
-                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 border shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60">
-                                        <li>
-                                            <span className="font-bold">Email:</span>
-                                            <span className="text-sm break-all">{user.email}</span>
-                                        </li>
-                                        <li>
-                                            <button onClick={logoutUser} className="btn btn-sm btn-error mt-1">Log Out</button>
-                                        </li>
-                                    </ul>
                                 </div>
-
-                            ) : (
-                                <RxAvatar size={35} />
-                            )
+                                <ul className="mt-3 z-[1] p-2 border shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60">
+                                    <li>
+                                        <span className="font-bold">Email:</span>
+                                        <span className="text-sm break-all">{user.email}</span>
+                                    </li>
+                                    <li>
+                                        <button onClick={logoutUser} className="btn btn-sm btn-error mt-1">Log Out</button>
+                                    </li>
+                                </ul>
+                            </div>
                         ) : (
                             <div className="space-x-5 mx-4 flex">
                                 <NavLink className='hover:text-green-500 font-bold hidden md:block' to="/signup">Sign Up</NavLink>
                                 <NavLink className='hover:text-green-500 font-bold' to="/login">Login</NavLink>
                             </div>
                         )}
+
 
                     </div>
 
