@@ -52,8 +52,8 @@ const AddTask = () => {
 
                 <div>
                     <label className="block  font-medium mb-1">Category</label>
-                    <select name='options' className="w-full px-4 py-2 border rounded-md ">
-                        <option>Select a category</option>
+                    <select name='options' className="w-full px-4 py-2 border text-black rounded-md ">
+                        <option >Select a category</option>
                         <option>Development</option>
                         <option>Marketing</option>
                         <option>Video Editing</option>
