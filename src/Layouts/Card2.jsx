@@ -31,7 +31,7 @@ const Card2 = () => {
                 </div>
 
                 <div className='flex-1 md:rounded-r-2xl md:rounded-tl-none rounded-b-2xl'>
-                    <img className='w-full  md:rounded-r-2xl h-full object-cover' src="/bs.jpg" alt="Business support" />
+                    <img className='w-full  md:rounded-r-2xl h-full object-cover' src="https://i.ibb.co/wrcSQzY3/bs.jpg" alt="Business support" />
                 </div>
             </div>
         </div>
