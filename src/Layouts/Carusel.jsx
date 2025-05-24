@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 const Carusel = () => {
     return (
         <Carousel showThumbs={false} autoPlay infiniteLoop>
-            <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/HTGvnX6d/portrait-male-programmer-office-392895-11888.jpg')" }}>
+            <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/SX7NLrWL/html-css-collage-concept-with-person-23-2150062008.jpg')" }}>
                 <h1 className=' text-xl md:text-4xl lg:text-6xl font-bold'><span className='text-green-500'>Find</span> <span className=''>Expert</span> <span><Typewriter
                     words={['Developer', 'Designer', 'Creator', 'programmer']}
                     loop={5}
@@ -19,7 +19,7 @@ const Carusel = () => {
                 <p className='md:text-xl'>Connect with skilled professionals ready  to tackle your <br /> projects quickly and efficiently.</p>
                 <button className='btn btn-primary'>Post a Task</button>
             </div>
-            <div className='text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/VYKh82n4/two-confident-business-man-shaking-hands-meeting-office-success-dealing-greeting-partner-concept-142.jpg')" }} >
+            <div className='text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/XQkWMyP/concept-partnership-teamwork-mixed-media-641298-14963.jpg')" }} >
                 <h1 className='text-xl md:text-4xl lg:text-6xl font-bold'><span><Typewriter
                     words={['Connect with Clients Worldwide', 'Join the Freelance Marketplace', 'Find Work That Fits Your Skills', 'Work Remotely on Your Terms']}
                     loop={5}
@@ -32,7 +32,7 @@ const Carusel = () => {
                 <p className='md:text-xl'>Connect with skilled professionals ready  to tackle your <br /> projects quickly and efficiently.</p>
                 <button className='btn btn-primary hover:btn-secondary'>Brows a task</button>
             </div>
-            <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/q3pW4jSx/collaborative-process-indian-business-mans-brainstorming-meeting-officediverse-team-young-people-dre.jpg')" }} >
+            <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/1J8wSQ8y/business-men-collaboration-planning-laptop-office-startup-online-company-web-design-corporate-team-c.jpg')" }} >
                 <h1 className='text-xl md:text-4xl lg:text-6xl font-bold'><span className='text-green-500'>Work on</span> <span><Typewriter
                     words={['Business Plan', 'E-commerce Store', 'Website', 'personal Branding']}
                     loop={5}
