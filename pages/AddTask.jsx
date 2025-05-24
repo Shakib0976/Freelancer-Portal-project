@@ -88,6 +88,10 @@ const AddTask = () => {
                         <label className="block font-medium mb-1">Your Name</label>
                         <input name='user' type="text" readOnly value={user ? user.displayName : 'user not found'} className="w-full px-4 py-2 border rounded-md " />
                     </div>
+                    <div className='hidden'>
+                        <label className="block font-medium mb-1">Your Name</label>
+                        <input name='bids' type="text" defaultValue={0} className="w-full px-4 py-2 border rounded-md " />
+                    </div>
                 </div>
 
                 <button type='submit' className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Post Task</button>

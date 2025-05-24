@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../src/Contest/AuthContest';
-import { Link } from 'react-router';
+import { Link, Links } from 'react-router';
 
 
 const MyTask = () => {
@@ -56,7 +56,7 @@ const MyTask = () => {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm t">${task.budget}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm ">{task.date}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm ">0</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm "> <Link to={`/bids/${task._id}`} className='btn btn-primary'>View Bids</Link> </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 cursor-pointer"><button onClick={()=>updatehandle(task._id)} className='btn btn-primary'>Update</button></td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 cursor-pointer"><button className='btn btn-primary'>Delete</button></td>
                                 </tr>

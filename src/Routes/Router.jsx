@@ -10,6 +10,8 @@ import Login from "../../pages/Login";
 import SignUp from "../../pages/SignUp";
 import ErrorPage from "../../pages/Error";
 import PrivateRoutes from "./PrivateRoutes";
+import SingleTask from "../Components/SingleTask";
+import BidsDetails from "../Layouts/BidsDetails";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/browsetasks',
-        loader:() => fetch('http://localhost:5000/task'),
+        loader: () => fetch('http://localhost:5000/task'),
         element: <PrivateRoutes><Bouwsetasks></Bouwsetasks></PrivateRoutes>
       },
 
@@ -44,6 +46,17 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         Component: SignUp
+      },
+
+      {
+        path: '/task/:id',
+        loader: ({ params }) => fetch(`http://localhost:5000/task/${params.id}`),
+        element: <PrivateRoutes><SingleTask></SingleTask></PrivateRoutes>
+      },
+      {
+        path: '/bids/:id',
+        loader: ({ params }) => fetch(`http://localhost:5000/task/${params.id}`),
+        element: <PrivateRoutes><BidsDetails></BidsDetails></PrivateRoutes>
       }
 
     ]

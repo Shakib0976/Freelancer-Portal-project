@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const Bouwsetasks = () => {
     const tasks = useLoaderData();
     const [seleCatergorys, setSelectedCategory] = useState("All");
 
+
     const handleCategoryChange = (e) => {
         setSelectedCategory(e.target.value);
     };
+
+
+
 
     const tasksFiler = seleCatergorys === "All" ? tasks
         : tasks.filter(task => task.options === seleCatergorys);
@@ -42,7 +46,7 @@ const Bouwsetasks = () => {
                             </ul>
                             <div className=" flex justify-end ">
 
-                                <button className="btn btn-primary w-full mb-0 ">View Details</button>
+                                <Link to={`/task/${task._id}`} className="btn btn-primary w-full mb-0 ">View Details</Link>
                             </div>
                         </div>
                     </div>)

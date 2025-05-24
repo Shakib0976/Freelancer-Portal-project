@@ -2,6 +2,7 @@ import React, { use } from 'react';
 
 import { Navigate, useLocation } from 'react-router';
 import { AuthContext } from '../Contest/AuthContest';
+import Loader from '../Components/Loader';
 
 const PrivateRoutes  = ({children}) => {
 
@@ -13,7 +14,7 @@ const PrivateRoutes  = ({children}) => {
     const {user ,loading} =use(AuthContext);
 
     if(loading){
-        return <span className="loading loading-spinner loading-xl"></span>
+        return <Loader></Loader>
     }
 
     if(!user){
