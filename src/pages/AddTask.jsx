@@ -1,7 +1,7 @@
 import { use } from 'react';
-import { AuthContext } from '../src/Contest/AuthContest';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
+import { AuthContext } from '../Contest/AuthContest';
 
 const AddTask = () => {
 

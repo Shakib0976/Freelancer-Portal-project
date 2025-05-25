@@ -1,7 +1,7 @@
 import React, { use, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
-import { AuthContext } from '../src/Contest/AuthContest';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../Contest/AuthContest';
 
 const SignUp = () => {
     const { setUser, createUser, googleSignIn, updateUser , setLoading } = use(AuthContext);

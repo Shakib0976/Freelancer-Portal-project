@@ -3,15 +3,15 @@ import {
 } from "react-router";
 import Root from "../Root/Root";
 import Home from "../Layouts/Home";
-import AddTask from "../../pages/AddTask";
-import Bouwsetasks from "../../pages/Bouwsetasks";
-import MyTask from "../../pages/MyTask";
-import Login from "../../pages/Login";
-import SignUp from "../../pages/SignUp";
-import ErrorPage from "../../pages/Error";
+import ErrorPage from "../pages/Error";
 import PrivateRoutes from "./PrivateRoutes";
 import SingleTask from "../Components/SingleTask";
 import BidsDetails from "../Layouts/BidsDetails";
+import AddTask from "../pages/AddTask";
+import Bouwsetasks from "../pages/Bouwsetasks";
+import Login from "../pages/Login";
+import MyTask from "../pages/MyTask";
+import SignUp from "../pages/SignUp";
 
 const router = createBrowserRouter([
   {

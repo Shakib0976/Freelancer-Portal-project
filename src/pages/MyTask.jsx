@@ -1,8 +1,8 @@
 import React, { use, useEffect, useState } from 'react';
-import { AuthContext } from '../src/Contest/AuthContest';
 import { Link, Links } from 'react-router';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Contest/AuthContest';
 
 
 const MyTask = () => {
@@ -49,6 +49,7 @@ const MyTask = () => {
 
 
     const handleUpdate = (e) => {
+        e.preventDefault()
         const form = e.target;
         const formData = new FormData(form);
         const addData = Object.fromEntries(formData.entries());
@@ -64,6 +65,11 @@ const MyTask = () => {
         })
             .then(res => res.json())
             .then(data => {
+                setTasks(prevTasks =>
+                    prevTasks.map(task =>
+                        task._id === selectedTaskId ? { ...task, ...addData } : task
+                    )
+                );
                 console.log('updatebids', data);
                 toast.success('bits Update successfull')
             })
@@ -179,7 +185,7 @@ const MyTask = () => {
                                                             </div>
                                                         </div>
 
-                                                        <div className="w-full modal-action">
+                                                        <div method="dialog" className="w-full modal-action">
                                                             <button type='submit' className='btn w-full mb-1 btn-primary'>Update</button>
                                                         </div>
                                                     </form>
@@ -215,8 +221,9 @@ const MyTask = () => {
                                     <h1 className='text-sm'><span className='font-semibold'>Descriptions</span> {task.description}</h1>
                                 </ul>
                                 <div className="mt-6 flex justify-end space-x-4">
-                                    <button className="btn btn-primary ">Delete</button>
-                                    <button className="btn btn-primary ">Update</button>
+                                    <button onClick={() => handleDelete(task._id)} className="btn btn-primary ">Delete</button>
+                                    <Link className="btn btn-primary" to={`/bids/${task._id}`}>View Bids</Link>
+                                    <Link to={'/'} className="btn btn-primary">Go Home</Link>
 
                                 </div>
                             </div>

@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 const CardAnnimation = () => {
     return (
         <div className='shadow-sm'>
-            <div className='w-11/12 mx-auto my-7 '>
-                <h1 className='md:text-5xl text-3xl  mt-20 mb-8 font-semibold'>Popular services</h1>
+            <div className='w-11/12 mx-auto my-17 '>
+                <div className='text-center mb-8'>
+                    <h1 className='md:text-5xl text-3xl  mt-20 mb-2 font-semibold'>Popular Categories</h1>
+                    <p>Browse tasks by category to find the perfect match for your skills and interests.</p>
+                </div>
 
                 <div className='grid  md:grid-cols-2 lg:grid-cols-6'>
                     <div className='m-5'>

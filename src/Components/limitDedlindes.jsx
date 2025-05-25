@@ -14,9 +14,9 @@ const LimitDeadlines = () => {
 }, []);
 
   return (
-    <div className='w-11/12 mx-auto my-30'>
+    <div className='w-11/12 mx-auto my-10 md:my-30'>
       <h1 className='md:text-5xl mb-2 text-4xl text-center font-bold'>Featured Tasks</h1>
-      <p className='text-center mb-20'>Browse our most urgent tasks with upcoming deadlines. Find the perfect project for your skills and start earning.</p>
+      <p className='text-center mb-10 md:mb-20'>Browse our most urgent tasks with upcoming deadlines. Find the perfect project for your skills and start earning.</p>
       <div className='grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {tasks.map(task => <div key={task._id} className="card w-11/12 mx-auto bg-[#0D4715] text-white shadow-sm">
                         <div className="card-body space-x-2">
