@@ -41,7 +41,8 @@ const Bouwsetasks = () => {
                             </div>
                             <ul className="mt-6 flex h-50 flex-col p-5 rounded-2xl bg-yellow-500 text-black gap-2 text-xs">
                                 <h1 className='text-lg'><span className='font-bold'>Title:  </span>{task.title}</h1>
-                                <h1 className='text-lg'><span className='font-bold'>Bids :</span> 0</h1>
+                                <h1 className='text-lg'><span className='font-bold'>Bids :</span>{task.bids
+                                }</h1>
                                 <h1 className='text-sm'><span className='font-semibold'>Descriptions</span> {task.description}</h1>
                             </ul>
                             <div className=" flex justify-end ">

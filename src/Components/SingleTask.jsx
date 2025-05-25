@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router';
 
 const SingleTask = () => {
@@ -19,6 +20,7 @@ const SingleTask = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('updatebids', data);
+                toast.success('bits added successfull')
             })
     }
     return (
@@ -59,9 +61,12 @@ const SingleTask = () => {
                         <p className="text-sm font-medium">Budget</p>
                         <p className=" font-bold text-lg">${userTask.budget}</p>
                     </div>
-                    <button onClick={updateBids} className="w-full text-white btn hover:btn-secondary   btn-primary  font-semibold py-2 px-4 rounded-lg">
+                   <div className='space-x-5 flex w-full'>
+                     <button onClick={updateBids} className=" text-white btn hover:btn-secondary   btn-primary  font-semibold py-2 px-4 rounded-lg">
                         Bid on This Task
                     </button>
+                    <Link className=" text-white btn hover:btn-secondary   btn-primary  font-semibold py-2 px-4 rounded-lg" to={'/'}>Go Home</Link>
+                   </div>
                 </div>
             </div>
         </div>
