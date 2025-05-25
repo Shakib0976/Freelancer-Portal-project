@@ -2,22 +2,53 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../src/Contest/AuthContest';
 import { Link, Links } from 'react-router';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 
 const MyTask = () => {
     const [tasks, setTasks] = useState([])
     const [selectedTaskId, setSelectedTaskId] = useState(null);
 
-    const updatehandle = (id) => {
-        console.log('updated', id);
 
 
+    const handleDelete = (id) => {
+        console.log('delete', id);
+
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/task/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount) {
+                            const remainTask = tasks.filter(task => task._id != id);
+                            setTasks(remainTask)
+                            console.log('afterDeleting data ', data);
+                        }
+                    })
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your task has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
 
     }
 
 
     const handleUpdate = (e) => {
-        e.preventDefault()
         const form = e.target;
         const formData = new FormData(form);
         const addData = Object.fromEntries(formData.entries());
@@ -159,7 +190,7 @@ const MyTask = () => {
                                                 </div>
                                             </div>
                                         </dialog></td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 cursor-pointer"><button className='btn btn-primary'>Delete</button></td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-blue-600 cursor-pointer"><button onClick={() => handleDelete(task._id)} className='btn btn-primary'>Delete</button></td>
                                 </tr>
                             </tbody>)
                         }
@@ -180,12 +211,13 @@ const MyTask = () => {
                                 </div>
                                 <ul className="mt-6 flex flex-col p-5 rounded-2xl bg-yellow-500 text-black gap-2 text-xs">
                                     <h1 className='text-lg'><span className='font-bold'>Title:  </span>{task.title}</h1>
-                                    <h1 className='text-lg'><span className='font-bold'>Bids :</span> 0</h1>
+                                    <h1 className='text-lg'><span className='font-bold'>Bids :</span>{task.bids}</h1>
                                     <h1 className='text-sm'><span className='font-semibold'>Descriptions</span> {task.description}</h1>
                                 </ul>
                                 <div className="mt-6 flex justify-end space-x-4">
                                     <button className="btn btn-primary ">Delete</button>
-                                    <button onClick={() => updatehandle(task._id)} className="btn btn-primary ">Update</button>
+                                    <button className="btn btn-primary ">Update</button>
+
                                 </div>
                             </div>
                         </div>)
