@@ -8,7 +8,7 @@ const SingleTask = () => {
 
 
     const updateBids = () => {
-        fetch(`http://localhost:5000/task/${userTask._id}`, {
+        fetch(`https://freelance-project-server.vercel.app/task/${userTask._id}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'

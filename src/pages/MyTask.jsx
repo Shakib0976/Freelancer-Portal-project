@@ -99,7 +99,7 @@ const MyTask = () => {
                 </div>
             </div>
             <div>
-                <div className="overflow-x-auto hidden lg:block">
+                <div className="overflow-x-auto">
                     <table className="min-w-full border-2 border-gray-300 divide-y divide-gray-200">
                         <thead className="">
                             <tr className='bg-gray-900 text-white'>
@@ -204,31 +204,6 @@ const MyTask = () => {
 
                     </table>
                     <div className="mt-4 text-center text-gray-500 text-sm">A list of your posted tasks</div>
-                </div>
-
-                <div className='lg:hidden md:grid-cols-2 grid gap-5 grid-cols-1 '>
-                    {
-                        tasks.map(task => <div key={task._id} className="card mx-auto w-11/12 bg-[#0D4715] text-white shadow-sm">
-                            <div className="card-body">
-                                <span className="badge badge-xs badge-warning"> <span className='font-bold'>Deadline:</span> {task.date}</span>
-                                <div className="flex justify-between">
-                                    <h2 className="text-xl font-bold">{task.options}</h2>
-                                    <span className="text-xl">${task.budget}</span>
-                                </div>
-                                <ul className="mt-6 flex flex-col p-5 rounded-2xl bg-yellow-500 text-black gap-2 text-xs">
-                                    <h1 className='text-lg'><span className='font-bold'>Title:  </span>{task.title}</h1>
-                                    <h1 className='text-lg'><span className='font-bold'>Bids :</span>{task.bids}</h1>
-                                    <h1 className='text-sm'><span className='font-semibold'>Descriptions</span> {task.description}</h1>
-                                </ul>
-                                <div className="mt-6 flex justify-end space-x-4">
-                                    <button onClick={() => handleDelete(task._id)} className="btn btn-primary ">Delete</button>
-                                    <Link className="btn btn-primary" to={`/bids/${task._id}`}>View Bids</Link>
-                                    <Link to={'/'} className="btn btn-primary">Go Home</Link>
-
-                                </div>
-                            </div>
-                        </div>)
-                    }
                 </div>
 
 

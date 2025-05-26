@@ -5,7 +5,7 @@ const LimitDeadlines = () => {
    const [tasks, setTasks] = useState([]);
 
  useEffect(() => {
-  fetch("http://localhost:5000/task/latesttask/taskdeadlines")
+  fetch("https://freelance-project-server.vercel.app/task/latesttask/taskdeadlines")
     .then((res) => res.json())
     .then((data) => {
       console.log("Nearest 6 deadlines:", data);

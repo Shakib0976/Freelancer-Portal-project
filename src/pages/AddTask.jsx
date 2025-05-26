@@ -19,7 +19,7 @@ const AddTask = () => {
         const addData = Object.fromEntries(formData.entries());
         console.log(addData);
 
-        fetch('http://localhost:5000/task', {
+        fetch('https://freelance-project-server.vercel.app/task', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'
