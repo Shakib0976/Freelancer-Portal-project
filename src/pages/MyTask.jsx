@@ -26,7 +26,7 @@ const MyTask = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/task/${id}`, {
+                fetch(`https://freelance-project-server.vercel.app/task/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -56,7 +56,7 @@ const MyTask = () => {
         console.log(addData);
 
 
-        fetch(`http://localhost:5000/task/${selectedTaskId}`, {
+        fetch(`https://freelance-project-server.vercel.app/task/${selectedTaskId}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ const MyTask = () => {
     const { user } = use(AuthContext);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/task/email/${user.email}`)
+        fetch(`https://freelance-project-server.vercel.app/task/email/${user.email}`)
             .then(res => res.json())
             .then(result => {
                 setTasks(result);
