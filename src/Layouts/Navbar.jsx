@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { toggleTheme } = useContext(ThemeContext);
+    
     const { user, setUser } = use(AuthContext);
     console.log(user);
 
@@ -99,6 +100,10 @@ const Navbar = () => {
                                 </div>
                                 <ul className="mt-3 z-[1] p-2 border shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60">
                                     <li>
+                                        <span className="font-bold">Name:</span>
+                                        <span className="text-sm break-all">{user.user}</span>
+                                    </li>
+                                     <li>
                                         <span className="font-bold">Email:</span>
                                         <span className="text-sm break-all">{user.email}</span>
                                     </li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Link } from 'react-router';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Carusel = () => {
@@ -17,7 +18,8 @@ const Carusel = () => {
                     delaySpeed={1000}
                 /></span></h1>
                 <p className='md:text-xl'>Connect with skilled professionals ready  to tackle your <br /> projects quickly and efficiently.</p>
-                <button className='btn btn-primary'>Post a Task</button>
+
+                <Link to={'/addtask'}><button className='btn btn-primary'>Post a Task</button></Link>
             </div>
             <div className='text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/XQkWMyP/concept-partnership-teamwork-mixed-media-641298-14963.jpg')" }} >
                 <h1 className='text-xl md:text-4xl lg:text-6xl font-bold'><span><Typewriter
@@ -30,7 +32,7 @@ const Carusel = () => {
                     delaySpeed={1000}
                 /></span></h1>
                 <p className='md:text-xl'>Connect with skilled professionals ready  to tackle your <br /> projects quickly and efficiently.</p>
-                <button className='btn btn-primary hover:btn-secondary'>Brows a task</button>
+                <Link to={'/browsetasks'}><button className='btn btn-primary hover:btn-secondary'>Brows a task</button></Link>
             </div>
             <div className=' text-start py-20 md:py-40 bg-cover bg-center  px-5 md:px-20 text-white space-y-2 md:space-y-8' style={{ backgroundImage: "url('https://i.ibb.co/1J8wSQ8y/business-men-collaboration-planning-laptop-office-startup-online-company-web-design-corporate-team-c.jpg')" }} >
                 <h1 className='text-xl md:text-4xl lg:text-6xl font-bold'><span className='text-green-500'>Work on</span> <span><Typewriter
@@ -43,7 +45,8 @@ const Carusel = () => {
                     delaySpeed={1000}
                 /></span></h1>
                 <p className='md:text-xl'>Set your own schedule, choose your projects,  and build your <br /> freelance career. and successfully</p>
-                <button className='btn btn-primary'>Post a Task</button>
+
+                <Link to={'/addtask'}><button className='btn btn-primary'>Post a Task</button></Link>
             </div>
         </Carousel>
     );
