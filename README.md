@@ -1,5 +1,7 @@
 Website Name : Freelancer Market
-![alt text](https://i.ibb.co.com/HL19Gt7m/Screenshot-2025-08-08-185015.png)
+
+## Screenshot
+![Project Screenshot](https://i.ibb.co.com/HL19Gt7m/Screenshot-2025-08-08-185015.png)
 OverView : Technologies used: React, React Router, Tailwind CSS, SwiperJS, Firebase (Auth + Firestore), React Icons, react-toastify
 
 
